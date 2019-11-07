@@ -1,0 +1,38 @@
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.buttonCancel {
+  background-color: #e63946;
+  color: white;
+  width: 100%;
+}
+
+.buttonSave {
+  background-color: #1d3557;
+  color: white;
+  width: 100%;
+}
+
+.card {
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+::ng-deep snack-bar-container.error-class {
+  background: #E63946;
+  color: white;
+}
+
+::ng-deep snack-bar-container.success-class {
+  background: #A8DADC;
+  color: black;
+}
