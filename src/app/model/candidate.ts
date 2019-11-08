@@ -1,5 +1,5 @@
 export class Candidate {
-    id: string;
+    id: number;
     full_name: string;
     cpf: string;
     rg: number;

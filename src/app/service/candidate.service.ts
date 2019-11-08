@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Candidate } from '../model/candidate';
-import { tap, catchError } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders(
+    { 'Content-Type': 'application/json'})
 };
+
 const apiUrl = 'https://delineaapi.herokuapp.com:443/candidate/';
+const urlLogin = 'http://delineaapi.herokuapp.com/o/token/,'
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +28,9 @@ export class CandidateService {
   }
 
   getCandidateById(id: number): Observable<Candidate> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.get<Candidate>(url)
   }
-
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

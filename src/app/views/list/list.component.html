@@ -13,7 +13,7 @@
                 <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
             </ng-container>
 
-            <!-- telefone Column -->
+            <!-- phone Column -->
             <ng-container matColumnDef="telefone">
                 <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
@@ -23,7 +23,7 @@
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <i class="material-icons" data-toggle="modal" data-target="#exampleModal"> create </i>
+                    <i class="material-icons" data-toggle="modal" data-target="#exampleModal" (click)="getCandidate(cadidate)"> create </i>
                     <i class="material-icons"> delete </i>
                 </mat-cell>
             </ng-container>
