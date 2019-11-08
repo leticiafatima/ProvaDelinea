@@ -19,7 +19,7 @@
 }
 
 .card {
-  margin-top: 30%;
+  margin-top: 10%;
   margin-bottom: 10%;
 }
 
@@ -35,4 +35,11 @@
 ::ng-deep snack-bar-container.success-class {
   background: #A8DADC;
   color: black;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 20%;
 }
