@@ -23,8 +23,7 @@
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <i class="material-icons" data-toggle="modal" data-target="#exampleModal" (click)="getCandidate(cadidate)"> create </i>
-                    <i class="material-icons"> delete </i>
+                    <i class="material-icons" data-toggle="modal" data-target="#exampleModal" (click)="getCandidate(candidate)"> create </i>
                 </mat-cell>
             </ng-container>
 
@@ -40,7 +39,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Candidato: {{candidate?.id}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -51,45 +50,45 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nome Completo" [(ngModel)]="full_name"
+                                    <input matInput placeholder="Nome Completo" [ngModel]="candidate?.full_name" (ngModelChange)="candidate.full_name=$event"
                                         name="full_name">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="CPF" [(ngModel)]="cpf" name="cpf">
+                                    <input matInput placeholder="CPF" [ngModel]="candidate?.cpf" (ngModelChange)="candidate.cpf=$event">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="RG" [(ngModel)]="rg" name="rg">
+                                    <input matInput placeholder="RG" [ngModel]="candidate?.rg" (ngModelChange)="candidate.rg=$event">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
                                     <input matInput type="date" placeholder="Data de Nascimento"
-                                        [(ngModel)]="birth_date" name="birth_date">
+                                    [ngModel]="candidate?.birth_date" (ngModelChange)="candidate.birth_date=$event" name="candidate?.birth_date">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput type="tel" placeholder="Telefone" [(ngModel)]="phone" name="phone">
+                                    <input matInput type="tel" placeholder="Telefone" [ngModel]="candidate?.phone" (ngModelChange)="candidate.phone=$event" name="phone">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nome de Usuário" [(ngModel)]="username"
+                                    <input matInput placeholder="Nome de Usuário" [ngModel]="candidate?.username" (ngModelChange)="candidate.username=$event"
                                         name="username">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput type="email" placeholder="E-mail" [(ngModel)]="email" name="email">
+                                    <input matInput type="email" placeholder="E-mail" [ngModel]="candidate?.email" (ngModelChange)="candidate.email=$event" name="email">
                                 </mat-form-field>
                             </div>
                             <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput type="password" placeholder="Senha" [(ngModel)]="passowrd"
+                                    <input matInput type="password" placeholder="Senha" [ngModel]="candidate?.password" (ngModelChange)="candidate.password=$event"
                                         name="password">
                                 </mat-form-field>
                             </div>
