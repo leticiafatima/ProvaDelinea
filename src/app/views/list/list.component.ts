@@ -29,13 +29,14 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.candidateService.list().subscribe(resp => {
       this.dataSource = resp;
+      this.candidate = resp;
     })
   }
 
   getCandidate(candidate: Candidate) {
-    this.candidateId = 22;
-    this.candidateService.getCandidateById(this.candidateId).subscribe(resp => {
+    this.candidateService.getCandidateById(candidate['id']).subscribe(resp => {
       this.candidate = resp;
+      this.candidateId = candidate.id;
     })
   }
 
@@ -55,10 +56,6 @@ export class ListComponent implements OnInit {
     candidate.username = this.candidate.username;
     candidate.email = this.candidate.email;
     candidate.password = this.candidate.password;
-
-    console.log(candidate.full_name)
-    console.log(candidate.cpf)
-
 
     this.candidateService.editCandidate(this.candidateId, candidate).subscribe(resp => {
       if (!resp) {
